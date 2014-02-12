@@ -6,9 +6,9 @@ set :stage, :production
 # server in each group is considered to be the first
 # unless any hosts have the primary property set.
 # Don't declare `role :all`, it's a meta role
-role :app, %w{railsapps@innercircle.nycdevshop.com}
-role :web, %w{railsapps@innercircle.nycdevshop.com}
-role :db,  %w{railsapps@innercircle.nycdevshop.com}
+role :app, %w{innercircle.nycdevshop.com}
+role :web, %w{innercircle.nycdevshop.com}
+role :db,  %w{innercircle.nycdevshop.com}
 
 # Extended Server Syntax
 # ======================
@@ -33,7 +33,7 @@ server 'innercircle.nycdevshop.com',
     user: 'railsapps', # overrides user setting above
     keys: %w(/home/railsapps/.ssh/id_rsa),
     forward_agent: false,
-    auth_methods: %w(publickey password),
+    auth_methods: %w(password),
     password: 'please use keys'
   }
 # setting per server overrides global ssh_options
