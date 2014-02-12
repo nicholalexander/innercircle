@@ -1,0 +1,2 @@
+photo_controller.rb
+

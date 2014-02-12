@@ -1,0 +1,27 @@
+.title
+  %h1 title:
+  %h2
+    = @photo.title
+
+.description
+  %h1 description:
+  %h2 
+    = @photo.description
+
+.photo
+  %img(src="#{@photo.image.url(:medium)}")
+
+.comments-add
+  %h1 Make your comments here:
+
+  = simple_form_for @new_comment, {url: photo_comments_path(@photo.id) } do |f|
+    = f.input :text
+    = f.submit
+
+.comments-read
+  %h1 These are all the comments on this photo:
+
+  - @photo.comments.each do |comment|
+    %h3
+      = comment.text
+      = comment.created_at

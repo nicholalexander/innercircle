@@ -1,0 +1,7 @@
+%h1 these are all the photos belonging to 
+%h3 
+  = @user.name
+
+- @photos.each do |photo|
+  %img(src="#{photo.image.url(:thumb)}")
+  = link_to photo.title, photo_path(photo.id)

@@ -1,0 +1,7 @@
+%h1 Upload your photo for all your friends!
+
+= simple_form_for @photo do |f|
+  = f.input :image
+  = f.input :title
+  = f.input :description
+  = f.submit
