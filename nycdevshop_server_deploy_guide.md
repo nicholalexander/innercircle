@@ -1,6 +1,7 @@
 ![WD40](http://www.prrag.com/blog/wp-content/uploads/2006/09/wd40-p_logo_2color.gif =250x)
 
-#The NYCDevShop 40 Step Server Deploy Guide
+#The NYC DevShop 40 Step Server Deploy Guide
+*Written by Nichol Alexander, Arun Umpathy, and Alec Hartman*
 
 ###1. Create A Droplet In A Digital Ocean
 
