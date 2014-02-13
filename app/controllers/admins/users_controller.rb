@@ -1,1 +1,3 @@
-users_controller.rb
+class Admins::UsersController < ApplicationController
+
+end

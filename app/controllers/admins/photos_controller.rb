@@ -1,2 +1,4 @@
-photo_controller.rb
+class Admins::PhotosController < ApplicationController
+
+end
 
