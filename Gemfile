@@ -46,6 +46,8 @@ gem 'simple_form'
 
 gem 'pry'
 
+gem 'mysql'
+
 # Devshop Gem - NOT USING
 # gem 'nyc_devshop'
 
