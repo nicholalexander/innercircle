@@ -2,7 +2,7 @@
 lock '3.1.0'
 
 set :application, 'innercircle'
-set :repo_url, 'git@github.com:github.com/thedevshop/InnerCircle.git'
+set :repo_url, 'https://github.com/thedevshop/InnerCircle.git'
 set :branch, 'master'
 
 # Default branch is :master
