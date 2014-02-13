@@ -2,7 +2,7 @@
 lock '3.1.0'
 
 set :application, 'innercircle'
-set :repo_url, 'https://github.com/thedevshop/InnerCircle.git'
+set :repo_url, 'git@github.com:github.com/thedevshop/InnerCircle.git'
 set :branch, 'master'
 
 # Default branch is :master
@@ -21,7 +21,11 @@ set :deploy_to, '/home/railsapps/public_html/innercircle/current/public'
 # set :pty, true
 
 # Default value for :linked_files is []
-# set :linked_files, %w{config/database.yml}
+set :linked_files, %w{config/database.yml}
+set :linked_dirs, %w{bin log tmp vendor/bundle public/system}
+
+SSHKit.config.command_map[:rake]  = "bundle exec rake" 
+SSHKit.config.command_map[:rails] = "bundle exec rails"
 
 # Default value for linked_dirs is []
 # set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
