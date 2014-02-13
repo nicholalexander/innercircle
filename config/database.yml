@@ -22,4 +22,4 @@ production:
   adapter: mysql
   database: innercircle
   username: railsapps
-  password: innercircle
+  password: 123

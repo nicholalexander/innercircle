@@ -21,8 +21,8 @@ set :deploy_to, '/home/railsapps/public_html/innercircle/current/public'
 # set :pty, true
 
 # Default value for :linked_files is []
-set :linked_files, %w{config/database.yml}
-set :linked_dirs, %w{bin log tmp vendor/bundle public/system}
+# set :linked_files, %w{config/database.yml}
+# set :linked_dirs, %w{bin log tmp vendor/bundle public/system}
 
 SSHKit.config.command_map[:rake]  = "bundle exec rake" 
 SSHKit.config.command_map[:rails] = "bundle exec rails"
