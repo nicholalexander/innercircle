@@ -196,7 +196,7 @@
 			ServerAlias www.innercircle.nycdevshop.com
 			
 			# !!! Be sure to point DocumentRoot to 'public'!
-			DocumentRoot /home/railsapps/public_html/innercircle
+			DocumentRoot /home/railsapps/public_html/APPNAME/current/public
 			
 			<Directory />
 				Options -Indexes  
