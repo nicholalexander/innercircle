@@ -1,4 +1,22 @@
-%p= comment.text
+// alterante rows
+// assign clas to parent div
+/ 
+// render out content for speech bubble
+/ %p= comment.text
+
+-if @count == 1
+	.left{:class => 'speech'}
+		%p= comment.text
+		%p= comment.user.name
+		- @count = @count * -1
+-else
+	.right{:class => 'speech'}
+		%p= comment.text
+		%p= comment.user.name
+		- @count = @count * -1
+
+
+
 
 
 
