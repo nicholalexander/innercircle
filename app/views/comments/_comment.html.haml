@@ -7,6 +7,7 @@
 -if @count == 1
 	.triangle-right{:class => 'left'}
 		%p= comment.text
+		%p posted by:
 		%p= comment.user.name
 		- @count = @count * -1
 -else

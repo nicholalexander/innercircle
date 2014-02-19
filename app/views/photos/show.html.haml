@@ -4,12 +4,10 @@
     %img(src="#{@photo.image.url(:medium)}")
     .details
       .title
-        %h1 title:
         %h2
           = @photo.title
-        
+      %hr 
       .description    
-        %h1 description:
         %h2 
           = @photo.description
 
@@ -17,7 +15,7 @@
     
 
     .comments-read
-      %h1 These are all the comments on this photo:
+      /%h1 These are all the comments on this photo:
 
       / - @photo.comments.each do |comment|
       /   %h3
@@ -26,10 +24,8 @@
       /     = comment.created_at
 
     .comments-add
-      %h1 Make your comments here:
-
       = simple_form_for @new_comment, {url: photo_comments_path(@photo.id), defaults: { input_html: {class: "commentform"}} } do |f|
-        = f.input :text
+        = f.input :text, placeholder: 'enter your comment here', label: false
         = hidden_field_tag :photo_id, @photo.id
-        = f.submit
+        = f.submit 'add comment', :class => 'submitbutton'
   
