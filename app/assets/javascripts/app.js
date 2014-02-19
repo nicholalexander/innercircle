@@ -41,7 +41,11 @@ $(document).ready(function(){
 						},
 			dataType: 'script',
 			success: function(data) {
-				console.log(data);
+				elem = $(".comments-read");
+				last = elem.children().length - 1;
+				target = $(elem)[0].scrollHeight
+				elem.animate({scrollTop:target}, 500);
+				//console.log(last, target);
 				}
 		});
 
