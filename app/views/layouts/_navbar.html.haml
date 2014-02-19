@@ -1,0 +1,22 @@
+.navbar
+	.navbar{:class => 'left'}
+		-if current_user
+			%p welcome, #{current_user.name}
+		-else
+			%p welcome, stranger.
+
+
+	.navbar{:class => 'right'}
+		-if current_user
+			%ul= link_to "logout", logout_path
+		-else 
+			%ul= link_to 'signup', signup_path
+			%ul= link_to "login", login_path
+
+
+
+
+/ %h1= link_to "signup", signup_path
+/ %h1= link_to "login", login_path
+/ %h1= link_to "logout", logout_path
+/ 	

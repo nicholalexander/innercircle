@@ -5,12 +5,12 @@
 / %p= comment.text
 
 -if @count == 1
-	.left{:class => 'speech'}
+	.triangle-right{:class => 'left'}
 		%p= comment.text
 		%p= comment.user.name
 		- @count = @count * -1
 -else
-	.right{:class => 'speech'}
+	.triangle-right{:class => 'right'}
 		%p= comment.text
 		%p= comment.user.name
 		- @count = @count * -1
