@@ -1,32 +1,38 @@
-.title
-  %h1 title:
-  %h2
-    = @photo.title
+.container
 
-.description
-  %h1 description:
-  %h2 
-    = @photo.description
+  .photobox
+    %img(src="#{@photo.image.url(:medium)}")
+    .details
+      .title
+        %h1 title:
+        %h2
+          = @photo.title
+        
+      .description    
+        %h1 description:
+        %h2 
+          = @photo.description
 
-.photo
-  %img(src="#{@photo.image.url(:medium)}")
+  .commentsbox      
+    
 
-.comments-add
-  %h1 Make your comments here:
+    .comments-read
+      %h1 These are all the comments on this photo:
 
-  = simple_form_for @new_comment, {url: photo_comments_path(@photo.id), defaults: { input_html: {class: "commentform"}} } do |f|
-    = f.input :text
-    = hidden_field_tag :photo_id, @photo.id
-    = f.submit
+      / - @photo.comments.each do |comment|
+      /   %h3
+      /     = current_user.name
+      /     = comment.text
+      /     = comment.created_at
 
-.comments-read
-  %h1 These are all the comments on this photo:
+    .comments-add
+      %h1 Make your comments here:
 
-  - @photo.comments.each do |comment|
-    %h3
-      = current_user.name
-      = comment.text
-      = comment.created_at
+      = simple_form_for @new_comment, {url: photo_comments_path(@photo.id), defaults: { input_html: {class: "commentform"}} } do |f|
+        = f.input :text
+        = hidden_field_tag :photo_id, @photo.id
+        = f.submit
 
-.comments
+    / .comments
+    /   %h1 eofjieof
   
