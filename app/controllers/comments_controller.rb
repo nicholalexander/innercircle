@@ -1,17 +1,14 @@
 class CommentsController < ApplicationController
+  respond_to :html, :js, :json
 
   def create
-
+    @photo = Photo.find_by_id(params[:photo_id])
     @comment = Comment.create(comment_params)
     @comment.user_id = current_user.id
     @comment.photo_id = params[:photo_id]
-
-    if @comment.save!  
-      redirect_to photo_path(params[:photo_id])
-    end
-
+    @comment.save!
+    # render 'photos/create', :formats => [:js]
   end
-
 
  private
   

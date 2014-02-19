@@ -25,6 +25,7 @@ class PhotosController < ApplicationController
     @photo = Photo.find(params[:id])
     @new_comment = Comment.new
     
+    
   end
 
 

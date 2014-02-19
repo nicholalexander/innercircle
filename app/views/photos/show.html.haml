@@ -14,14 +14,19 @@
 .comments-add
   %h1 Make your comments here:
 
-  = simple_form_for @new_comment, {url: photo_comments_path(@photo.id) } do |f|
+  = simple_form_for @new_comment, {url: photo_comments_path(@photo.id), defaults: { input_html: {class: "commentform"}} } do |f|
     = f.input :text
+    = hidden_field_tag :photo_id, @photo.id
     = f.submit
 
 .comments-read
   %h1 These are all the comments on this photo:
 
-  - @photo.comments.each do |comment|
-    %h3
-      = comment.text
-      = comment.created_at
+  / - @photo.comments.each do |comment|
+  /   %h3
+  /     = current_user.name
+  /     = comment.text
+  /     = comment.created_at
+
+.comments
+  
