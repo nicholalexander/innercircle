@@ -22,11 +22,11 @@
 .comments-read
   %h1 These are all the comments on this photo:
 
-  / - @photo.comments.each do |comment|
-  /   %h3
-  /     = current_user.name
-  /     = comment.text
-  /     = comment.created_at
+  - @photo.comments.each do |comment|
+    %h3
+      = current_user.name
+      = comment.text
+      = comment.created_at
 
 .comments
   
