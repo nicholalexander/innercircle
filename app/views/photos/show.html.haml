@@ -6,9 +6,9 @@
       .title
         %h2
           = @photo.title
-      %hr 
+      / %hr 
       .description    
-        %h2 
+        %p 
           = @photo.description
 
   .commentsbox      
@@ -16,8 +16,21 @@
 
     .comments-read
       /%h1 These are all the comments on this photo:
-
-      / - @photo.comments.each do |comment|
+      - @count = 1
+      = render @photo.comments
+      / -@count = 1
+      / -@photo.comments.each do |comment|
+        
+      /   -if @count == 1
+      /     .triangle-right{:class => 'left'}
+      /       %p= comment.text
+      /       %p= comment.user.name
+      /       - @count = @count * -1
+      /   -else
+      /     .triangle-right{:class => 'right'}
+      /       %p= comment.text
+      /       %p= comment.user.name
+      /       - @count = @count * -1
       /   %h3
       /     = current_user.name
       /     = comment.text
@@ -25,7 +38,7 @@
 
     .comments-add
       = simple_form_for @new_comment, {url: photo_comments_path(@photo.id), defaults: { input_html: {class: "commentform"}} } do |f|
-        = f.input :text, placeholder: 'enter your comment here', label: false
+        = f.input :text, :as => :text, placeholder: 'enter your comment here', label: false
         = hidden_field_tag :photo_id, @photo.id
         = f.submit 'add comment', :class => 'submitbutton'
   

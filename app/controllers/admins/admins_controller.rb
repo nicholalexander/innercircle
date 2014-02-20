@@ -8,6 +8,7 @@ class Admins::AdminsController < SessionsController
   def destroy_all
     User.destroy_all
     Photo.destroy_all
+    Comment.destroy_all
     redirect_to admins_path
   end
 end

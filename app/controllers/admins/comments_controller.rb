@@ -4,14 +4,23 @@ class Admins::CommentsController < ApplicationController
 	end
 
 	def edit
-
+		@comment = Comment.find(params[:id])
 	end
 
 	def update
+		@comment = Comment.find(params[:id])
+		if @comment.update_attributes(comment_params)
 
 	end
 
 	def destroy
+		Comment.find(params[:id]).destroy
+	end
 
+
+	private
+
+	def comment_params
+		params.require(:comment).permit(:text)
 	end
 end
