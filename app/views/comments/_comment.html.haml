@@ -5,16 +5,19 @@
 / %p= comment.text
 
 -if @count == 1
+	.avatar{:class => 'left'}
+		%img(src="#{comment.user.avatar.url(:thumb)}")
 	.triangle-right{:class => 'left'}
 		%p= comment.text
-		%p posted by:
-		%p= comment.user.name
 		- @count = @count * -1
 -else
 	.triangle-right{:class => 'right'}
 		%p= comment.text
-		%p= comment.user.name
+	.avatar{:class => 'right'}
+		%img(src="#{comment.user.avatar.url(:thumb)}")
+	.clearfix
 		- @count = @count * -1
+
 
 
 

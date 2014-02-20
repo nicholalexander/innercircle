@@ -62,7 +62,21 @@ hr
 #new_comment
 	input
 
+.avatar
+	margin: 40px 0px 0px 0px
+	&.left
+		float: left
+		width: 75px
+	&.right
+		float: right
 
+.clearfix
+	display: block
+	font-size: 0px
+	content: ""
+	clear: both
+	height: 0px
+	visibility: hidden
 
 .triangle-right
 	position: relative
@@ -84,6 +98,8 @@ hr
 		display: block
 		width: 0
 	&.left
+		float: right
+		width: 60%
 		margin-left: 40px
 		background: #eeeeee
 		&:after
@@ -93,6 +109,8 @@ hr
 			border-width: 15px 40px 0 0
 			border-color: transparent #eeeeee
 	&.right
+		float: left
+		width: 60%
 		margin-right: 40px
 		background: #eeeeee
 		&:after
