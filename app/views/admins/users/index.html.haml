@@ -1,0 +1,9 @@
+.container
+	- @user.each do |usr|
+		%ul
+			= usr.name
+			= usr.email
+			= link_to 'delete user', admins_user_path(usr.id), :method => 'delete'
+
+
+	= link_to 'go to admin home', admins_path

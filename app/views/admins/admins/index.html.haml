@@ -1,3 +1,8 @@
-%h1 welcome admin
+.container
+	%h1 welcome 
 
-= link_to "destroy everything", admins_destroy_all_path
+
+	%ul= link_to "destroy everything", admins_destroy_all_path
+	%ul= link_to "Photos Admin Page", admins_photos_path
+	%ul= link_to "Users Admin Page", admins_users_path
+	%ul= link_to "Comments Admin Page", admins_comments_path

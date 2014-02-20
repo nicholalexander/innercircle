@@ -1,0 +1,7 @@
+.container
+	- @comment.each do |com|
+		%ul
+			= com.text
+			= link_to 'delete comment', admins_comment_path(com.id), :method => 'delete'
+
+	= link_to 'go to admin home', admins_path

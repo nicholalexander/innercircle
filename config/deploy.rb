@@ -33,7 +33,6 @@ SSHKit.config.command_map[:rails] = "bundle exec rails"
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 
-
 namespace :deploy do
 
   desc 'Restart application'

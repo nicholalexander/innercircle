@@ -18,7 +18,10 @@ class Admins::PhotosController < ApplicationController
 	end
 
 	def destroy
-		@photo.find(params[:id]).destroy
+		@photo = Photo.find(params[:id])
+		if @photo.destroy
+			redirect_to admins_photos_path
+		end
 	end
 
 	def photo_params

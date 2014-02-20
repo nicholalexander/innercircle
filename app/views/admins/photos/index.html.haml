@@ -1,0 +1,9 @@
+.container
+	- @photo.each do |pic|
+		.admin
+			%ul
+				= pic.title
+				= pic.description
+				= link_to 'destroy', admins_photo_path(pic.id), :method => 'delete'
+
+	= link_to 'go to admin home', admins_path
