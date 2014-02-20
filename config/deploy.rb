@@ -9,7 +9,7 @@ set :branch, 'master'
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
 # Default deploy_to directory is /var/www/my_app
-set :deploy_to, '/home/railsapps/public_html/innercircle/current/public'
+set :deploy_to, '/home/railsapps/public_html/innercircle'
 
 # Default value for :format is :pretty
 # set :format, :pretty
