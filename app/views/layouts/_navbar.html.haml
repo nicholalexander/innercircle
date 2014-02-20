@@ -9,11 +9,12 @@
 
 	.navbar{:class => 'right'}
 		-if current_user
-			%ul= link_to "logout", logout_path
-			%ul= link_to "add new photo", new_photo_path 
+			%ul= link_to "logout", logout_path, :class => 'navbutton'
+			%ul= link_to 'add photo', new_photo_path, :class => 'navbutton'
+			
 		-else 
-			%ul= link_to 'signup', signup_path
-			%ul= link_to "login", login_path
+			%ul= link_to 'login', login_path, :class => 'navbutton'
+			%ul= link_to 'signup', signup_path, :class => 'navbutton'
 
 
 

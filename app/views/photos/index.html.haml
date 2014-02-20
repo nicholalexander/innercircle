@@ -1,5 +1,6 @@
 .container
-	.display-box
-		- @photos.each do |photo|
+	- @photos.each do |photo|
+		.display_box
 			%img(src="#{photo.image.url(:thumb)}")
-			= link_to photo.title, photo_path(photo.id)
+			.indexdescription
+				= link_to photo.title, photo_path(photo.id)
