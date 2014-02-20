@@ -10,7 +10,8 @@ class Admins::CommentsController < ApplicationController
 	def update
 		@comment = Comment.find(params[:id])
 		if @comment.update_attributes(comment_params)
-
+			redirect_to admins_users_path
+		end
 	end
 
 	def destroy

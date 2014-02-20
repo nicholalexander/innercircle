@@ -1,15 +1,12 @@
-%h1 This is a new user!
+.container
+	.formheader
+		%h1 Create a new user
 
 
-/ = form_for @user do |f|
-/   = f.label :name
-/   = f.text_field :name
-
-
-= simple_form_for @user do |f|
-  = f.input :name
-  = f.input :email
-  = f.input :password
-  = f.input :password_confirmation
-  = f.input :avatar
-  = f.button :submit
+	= simple_form_for @user do |f|
+		= f.input :name, label: false, placeholder: "name"
+		= f.input :email, label: false, placeholder: "email"
+		= f.input :password, label: false, placeholder: "password"
+		= f.input :password_confirmation, label: false, placeholder: "password confirmation"
+		= f.input :avatar, :input_html => {:value => 'avatar', :name => 'avatar'}
+		= f.button :submit
