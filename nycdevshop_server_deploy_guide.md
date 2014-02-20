@@ -323,3 +323,5 @@
 * [To resolve a warning on the apache server restarts](http://askubuntu.com/questions/256013/could-not-reliably-determine-the-servers-fully-qualified-domain-name)
 * our passenger errors came from the wrong path - we set deploy to appname with /current/public
 * properly guard passwords by putting them in .yml file, exclude from git, manually upload.
+* Run cap production deploy:migrate to migrate db
+* run bundle exec rake db:seed RAILS_ENV=production to seed the production db on your server (not on localhost)
