@@ -1,17 +1,7 @@
-/ = simple_form_for sessions_path do |f|
-/   = f.input :name
-/   = f.input :password
-/   = f.submit
-
-/ = form_tag sessions_path do 
-/   = label_tag :email
-/   = text_field_tag :email, params[:email]
-/   = label_tag :password
-/   = password_field_tag :password
-/   = submit_tag "Log in"
-
-= simple_form_for :login, {url: sessions_path } do |f|
-  = f.input :email
-  = f.input :password
-  = f.button :submit, "Login"
+.container
+	.formheader
+	= simple_form_for :login, {url: sessions_path } do |f|
+		= f.input :email, label: false, placeholder: 'email address'
+		= f.input :password, label: false, placeholder: 'password'
+		= f.button :submit, "Login", :class => 'signupbutton'
 
