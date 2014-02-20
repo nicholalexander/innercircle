@@ -1,7 +1,5 @@
-%h1 these are the photos of your inner circle
-
-= link_to "add new photo", new_photo_path 
-
-- @photos.each do |photo|
-  %img(src="#{photo.image.url(:thumb)}")
-  = link_to photo.title, photo_path(photo.id)
+.container
+	.display-box
+		- @photos.each do |photo|
+			%img(src="#{photo.image.url(:thumb)}")
+			= link_to photo.title, photo_path(photo.id)

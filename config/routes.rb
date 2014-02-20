@@ -19,9 +19,9 @@ namespace :admins do
 
   get 'destroy_all', to: "admins#destroy_all"
 
-  resources :users, only: [:update, :edit, :destroy]
-  resources :photos, only: [:update, :edit, :destroy]
-  resources :comments, only: [:update, :edit, :destroy]
+  resources :users, only: [:index, :update, :edit, :destroy]
+  resources :photos, only: [:index, :update, :edit, :destroy]
+  resources :comments, only: [:index, :update, :edit, :destroy]
   # resources :sessions
 end
 

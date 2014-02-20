@@ -1,6 +1,10 @@
 class CommentsController < ApplicationController
   respond_to :html, :js, :json
 
+  def index
+
+  end
+
   def create
     @photo = Photo.find_by_id(params[:photo_id])
     @comment = Comment.create(comment_params)

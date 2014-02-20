@@ -13,7 +13,7 @@ class Admins::SessionsController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
     session[:admin_id] = nil
     redirect_to root_url, notice: "logged out!"
   end
