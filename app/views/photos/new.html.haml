@@ -1,7 +1,9 @@
-%h1 Upload your photo for all your friends!
+.container
+	.formheader
+		%h1 Upload your photo!
 
-= simple_form_for @photo do |f|
-  = f.input :image
-  = f.input :title
-  = f.input :description
-  = f.submit
+	= simple_form_for @photo do |f|
+		= f.input :image
+		= f.input :title, label: false, placeholder: 'Title of photo'
+		= f.input :description, label: false, placeholder: 'Description of photo'
+		= f.submit 'upload photo', :class => 'signupbutton'

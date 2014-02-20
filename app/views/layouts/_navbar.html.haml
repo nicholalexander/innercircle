@@ -1,16 +1,13 @@
 .navbar
 	.navbar{:class => 'left'}
-		-if current_user
-			%p welcome, #{current_user.name}
-			
-		-else
-			%p welcome, stranger.
-
+		.logo
+			%h3= link_to 'InnerCircle', root_url
 
 	.navbar{:class => 'right'}
 		-if current_user
 			%ul= link_to "logout", logout_path, :class => 'navbutton'
 			%ul= link_to 'add photo', new_photo_path, :class => 'navbutton'
+			%ul= link_to 'all photos', photos_path, :class => 'navbutton'
 			
 		-else 
 			%ul= link_to 'login', login_path, :class => 'navbutton'
